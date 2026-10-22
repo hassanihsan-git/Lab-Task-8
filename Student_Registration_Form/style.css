@@ -1,0 +1,240 @@
+/* ==========================================================
+   Student Registration Form - External Stylesheet
+   Course: Application of ICT Lab (CS-181L)
+   ========================================================== */
+
+/* ---------- Colour Theme ---------- */
+:root {
+    --navy:      #0f2557;
+    --blue:      #2563eb;
+    --blue-dark: #1d4ed8;
+    --sky:       #38bdf8;
+    --gold:      #f5b301;
+    --text:      #1f2937;
+    --border:    #c9d3e6;
+    --field-bg:  #f8fafc;
+}
+
+/* ---------- Universal Selector ---------- */
+* {
+    box-sizing: border-box;
+}
+
+/* ---------- Page ---------- */
+body {
+    font-family: "Times New Roman", Times, serif;
+    color: var(--text);
+    background: linear-gradient(135deg, #0f2557 0%, #1e40af 55%, #38bdf8 100%);
+    background-attachment: fixed;
+    margin: 0;
+    padding: 30px 15px;
+}
+
+/* ---------- Form Container (class selector) ---------- */
+.registration-form {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(5, 15, 50, 0.4);
+    overflow: hidden;
+}
+
+/* Coloured stripe along the top of the card */
+.registration-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--blue), var(--sky), var(--gold));
+}
+
+/* ---------- Heading ---------- */
+h1 {
+    color: var(--navy);
+    font-size: 30px;
+    text-align: center;
+    margin: 24px 0 25px;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    background-color: var(--gold);
+}
+
+/* ---------- Field Groups ---------- */
+.form-group {
+    margin: 0 15px 16px;
+}
+
+/* ---------- Labels ---------- */
+label,
+.group-title {
+    display: block;
+    color: var(--navy);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* ---------- Inputs, Dropdowns, Textarea ---------- */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+    color: var(--text);
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--field-bg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ---------- Focus Effect ---------- */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* ---------- File Input Button ---------- */
+input[type="file"]::file-selector-button {
+    margin-right: 10px;
+    padding: 6px 14px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: var(--blue-dark);
+}
+
+/* ---------- Radio Buttons and Checkbox ---------- */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    color: var(--text);
+    margin-bottom: 0;
+    padding: 6px 14px;
+    background-color: var(--field-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.option-label:hover {
+    border-color: var(--blue);
+    background-color: #eef4ff;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: var(--blue);
+    cursor: pointer;
+}
+
+/* ---------- Buttons ---------- */
+.button-group {
+    display: flex;
+    gap: 14px;
+    margin: 24px 15px 20px;
+}
+
+button {
+    flex: 1;
+    padding: 12px 20px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+                background 0.2s ease, color 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+/* Register: gradient pill with glow */
+.btn-register {
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--blue) 0%, var(--navy) 100%);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+.btn-register:hover {
+    background: linear-gradient(135deg, var(--sky) 0%, var(--blue) 100%);
+    box-shadow: 0 10px 22px rgba(37, 99, 235, 0.5);
+}
+
+/* Reset: outlined pill that fills on hover */
+.btn-reset {
+    color: var(--navy);
+    background-color: transparent;
+    border-color: var(--navy);
+}
+
+.btn-reset:hover {
+    color: #ffffff;
+    background-color: var(--navy);
+    box-shadow: 0 8px 18px rgba(15, 37, 87, 0.3);
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(245, 179, 1, 0.7);
+    outline-offset: 3px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 25px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}
